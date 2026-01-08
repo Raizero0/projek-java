@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?> 
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?> 
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.javagear.controllers.UserMenuController"
+            stylesheets="@../../css/user/styleuser.css"
+            prefWidth="1200" prefHeight="700">
+
+    <Region styleClass="dashboard-bg" />
+    <Region styleClass="dashboard-overlay" />
+
+    <BorderPane>
+        <top>
+            <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="15">
+                <ImageView fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                    <image><Image url="@../../img/logo.png" /></image>
+                </ImageView>
+                <Label text="JAVAGEAR" styleClass="brand-text"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <HBox alignment="CENTER_RIGHT" spacing="15">
+                    <Button fx:id="btnPesan" text="💬 Pesan" onAction="#handleCekPesan" 
+                            style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;"/>
+                    <Button text="📞 Hubungi Admin" onAction="#handleHubungiAdmin" 
+                            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;"/>
+                    <HBox alignment="CENTER_RIGHT" spacing="10">
+                        <VBox alignment="CENTER_RIGHT">
+                            <Label fx:id="lblNamaUser" text="Hai, User!" styleClass="user-name"/>
+                            <Label fx:id="lblStatusMember" text="Member" style="-fx-text-fill: #7f8c8d; -fx-font-size: 11px;"/>
+                        </VBox>
+                        <Circle fx:id="circleProfil" radius="22" stroke="WHITE" strokeWidth="2" fill="LIGHTGRAY"/>
+                        <ImageView fx:id="imgBadgeSmall" fitHeight="35" fitWidth="35" preserveRatio="true"/>
+                    </HBox>
+                    <HBox styleClass="saldo-badge" alignment="CENTER" spacing="10">
+                        <Label text="Saldo:" style="-fx-font-size: 12px;"/>
+                        <Label fx:id="lblSaldo" text="Rp 0" styleClass="saldo-text"/>
+                        <Button text="+ Top Up" onAction="#handleTopUp" styleClass="btn-topup-small"/>
+                    </HBox>
+                    <Button text="Logout" onAction="#handleLogout" styleClass="btn-logout"/>
+                </HBox>
+            </HBox>
+        </top>
+
+        <center>
+            <VBox alignment="TOP_CENTER" spacing="15">
+                
+                <Region prefHeight="30" />
+
+                <VBox maxWidth="550" styleClass="journey-card" alignment="CENTER" spacing="5">
+                    <Label text="PETUALANGAN MEMBER ANDA" styleClass="section-title" style="-fx-font-size: 11px;"/>
+                    
+                    <StackPane>
+                        <ProgressBar fx:id="progressJourney" prefWidth="450" progress="0.0" styleClass="progress-bar-journey" style="-fx-min-height: 8;"/>
+                        
+                        <HBox alignment="CENTER" spacing="110">
+                            
+                            <VBox styleClass="badge-card" alignment="CENTER" spacing="2">
+                            <Label text="0 Pesanan" style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #a15600b6;"/>
+                                <ImageView fx:id="imgLevel1" fitHeight="40" fitWidth="40" preserveRatio="true">
+                                    <image><Image url="@../../img/badge/badge_basic.png"/></image>
+                                </ImageView>
+                                <Label text="BASIC" styleClass="text-unlocked" style="-fx-font-size: 9px;"/>
+                            </VBox>
+                            
+                            <VBox styleClass="badge-card" alignment="CENTER" spacing="2">
+                            <Label text="5 Pesanan" style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #4e4e4eff;"/>
+                                <ImageView fx:id="imgLevel2" fitHeight="55" fitWidth="55" preserveRatio="true">
+                                    <image><Image url="@../../img/badge/badge_silver.png"/></image>
+                                </ImageView>
+                                <Label fx:id="lblLevel2" text="LOCKED" styleClass="text-locked" style="-fx-font-size: 9px;"/>
+                                <Label fx:id="lblBenefit2" text="Diskon 5%" styleClass="benefit-badge" style="-fx-font-size: 8px;"/>
+                            </VBox>
+                            
+                            <VBox styleClass="badge-card" alignment="CENTER" spacing="2">
+                            <Label text="10 Pesanan" style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #cfb119ff;"/>
+                                <ImageView fx:id="imgLevel3" fitHeight="70" fitWidth="70" preserveRatio="true">
+                                    <image><Image url="@../../img/badge/badge_gold.png"/></image>
+                                </ImageView>
+                                <Label fx:id="lblLevel3" text="LOCKED" styleClass="text-locked" style="-fx-font-size: 9px;"/>
+                                <Label fx:id="lblBenefit3" text="Diskon 10%" styleClass="benefit-badge" style="-fx-font-size: 8px;"/>
+                            </VBox>
+                        </HBox>
+                    </StackPane>
+                    
+                    <Label fx:id="lblNextGoal" text="Loading..." 
+                           style="-fx-text-fill: #7f8c8d; -fx-font-size: 10px; -fx-font-style: italic;"/>
+                </VBox>
+
+                <VBox alignment="CENTER" spacing="20" style="-fx-padding: 10 0 0 0;">
+                    <Label text="Mau ngapain hari ini?" 
+                           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 5, 0, 0, 2);"/>
+                    
+                    <HBox alignment="CENTER" spacing="30">
+                        <VBox styleClass="menu-card" onMouseClicked="#handleInfoAkun" style="-fx-min-width: 250; -fx-min-height: 300; -fx-padding: 20;">
+                            <ImageView fitHeight="120" fitWidth="120" preserveRatio="true">
+                                 <image><Image url="@../../img/icon_user.png"/></image>
+                            </ImageView>
+                            <Region prefHeight="15"/>
+                            <Label text="Info Akun" styleClass="card-title" style="-fx-font-size: 20px;"/>
+                            <Region prefHeight="8"/>
+                            <Label text="Cek profil, riwayat, &amp; bayar denda." styleClass="card-desc" style="-fx-font-size: 12px;"/>
+                        </VBox>
+
+                        <VBox styleClass="menu-card" onMouseClicked="#handleSewaBarang" style="-fx-min-width: 250; -fx-min-height: 300; -fx-padding: 20;">
+                            <ImageView fitHeight="120" fitWidth="120" preserveRatio="true">
+                                <image><Image url="@../../img/icon_sewabarang.png"/></image>
+                            </ImageView>
+                            <Region prefHeight="15"/>
+                            <Label text="Mulai Sewa" styleClass="card-title" style="-fx-font-size: 20px;"/>
+                            <Region prefHeight="8"/>
+                            <Label text="Jelajahi katalog &amp; sewa sekarang." styleClass="card-desc" style="-fx-font-size: 12px;"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+                
+            </VBox>
+        </center>
+
+        <bottom>
+            <VBox alignment="CENTER" style="-fx-padding: 15;">
+                <Label text="© 2025 JavaGear Outdoor System" style="-fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 10px;"/>
+            </VBox>
+        </bottom>
+    </BorderPane>
+
+</StackPane>

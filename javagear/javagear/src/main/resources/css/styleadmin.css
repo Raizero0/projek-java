@@ -1,0 +1,184 @@
+/* styleadmin.css - Tema Hijau Gelap Profesional */
+
+.root {
+    -fx-background-color: #F5F7FA; /* Tetap terang biar mata gak sakit */
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+/* --- SIDEBAR / HEADER HIJAU GELAP --- */
+.admin-sidebar {
+    -fx-background-color: #1A5D34; /* Hijau Palette Lu */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+}
+
+.admin-name {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.admin-role {
+    -fx-font-size: 12px;
+    -fx-text-fill: #A5D6A7; /* Hijau muda pudar */
+}
+
+/* --- KARTU MENU UTAMA --- */
+.menu-card {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 3);
+    -fx-cursor: hand;
+    -fx-padding: 30;
+    -fx-alignment: CENTER;
+    -fx-min-width: 250;
+    -fx-min-height: 200;
+    -fx-border-color: transparent;
+    -fx-border-width: 2;
+    -fx-border-radius: 15;
+}
+
+.menu-card:hover {
+    -fx-translate-y: -5;
+    -fx-border-color: #1A5D34; /* Border Hijau pas hover */
+    -fx-background-color: #F1F8E9;
+}
+
+.card-icon {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+.card-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A5D34;
+}
+
+.card-desc {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7f8c8d;
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+}
+
+/* --- WIDGET PESAN (INBOX MINI) --- */
+.msg-widget {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+    -fx-padding: 15;
+}
+
+.msg-badge {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-padding: 2 8;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+/* TOMBOL LOGOUT */
+.btn-logout {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: white;
+    -fx-border-color: white;
+    -fx-border-radius: 5;
+    -fx-cursor: hand;
+}
+.btn-logout:hover {
+    -fx-background-color: #c0392b;
+    -fx-border-color: #c0392b;
+}
+
+/* --- TAMBAHAN EFEK LOGO --- */
+.logo-glow {
+    /* Bayangan Putih Bersinar (Glow Effect) */
+    /* Parameter: Tipe, Warna, Radius(Gedein biar nyebar), Spread(Ketebalan), X, Y */
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 255, 255, 0.9), 20, 0.6, 0, 0);
+}
+
+/* --- BUTTON FILTER KEREN (Radius 15) --- */
+
+.btn-filter-base {
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 8 20; /* Padding biar agak lebar */
+    -fx-font-size: 11px;
+}
+
+/* 1. SEMUA (UNGU) */
+.btn-ungu-transparan {
+    -fx-background-color: rgba(155, 89, 182, 0.15);
+    -fx-text-fill: #8e44ad;
+    -fx-border-color: #8e44ad;
+}
+.btn-ungu-transparan:hover { -fx-background-color: rgba(155, 89, 182, 0.3); }
+
+.btn-ungu-solid {
+    -fx-background-color: #9b59b6;
+    -fx-text-fill: white;
+    -fx-border-color: #9b59b6;
+    -fx-effect: dropshadow(three-pass-box, rgba(155, 89, 182, 0.4), 10, 0, 0, 3);
+}
+
+/* 2. MENUNGGU (KUNING) */
+.btn-kuning-transparan {
+    -fx-background-color: rgba(241, 196, 15, 0.15);
+    -fx-text-fill: #f39c12;
+    -fx-border-color: #f39c12;
+}
+.btn-kuning-transparan:hover { -fx-background-color: rgba(241, 196, 15, 0.3); }
+
+.btn-kuning-solid {
+    -fx-background-color: #f1c40f;
+    -fx-text-fill: white;
+    -fx-border-color: #f1c40f;
+    -fx-effect: dropshadow(three-pass-box, rgba(241, 196, 15, 0.4), 10, 0, 0, 3);
+}
+
+/* 3. LUNAS (HIJAU) */
+.btn-hijau-transparan {
+    -fx-background-color: rgba(46, 204, 113, 0.15);
+    -fx-text-fill: #27ae60;
+    -fx-border-color: #27ae60;
+}
+.btn-hijau-transparan:hover { -fx-background-color: rgba(46, 204, 113, 0.3); }
+
+.btn-hijau-solid {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+    -fx-border-color: #2ecc71;
+    -fx-effect: dropshadow(three-pass-box, rgba(46, 204, 113, 0.4), 10, 0, 0, 3);
+}
+
+/* 4. LUNAS DENDA (BIRU) */
+.btn-biru-transparan {
+    -fx-background-color: rgba(52, 152, 219, 0.15);
+    -fx-text-fill: #2980b9;
+    -fx-border-color: #2980b9;
+}
+.btn-biru-transparan:hover { -fx-background-color: rgba(52, 152, 219, 0.3); }
+
+.btn-biru-solid {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(three-pass-box, rgba(52, 152, 219, 0.4), 10, 0, 0, 3);
+}
+
+/* 5. TELAT (MERAH) */
+.btn-merah-transparan {
+    -fx-background-color: rgba(231, 76, 60, 0.15);
+    -fx-text-fill: #c0392b;
+    -fx-border-color: #c0392b;
+}
+.btn-merah-transparan:hover { -fx-background-color: rgba(231, 76, 60, 0.3); }
+
+.btn-merah-solid {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-border-color: #e74c3c;
+    -fx-effect: dropshadow(three-pass-box, rgba(231, 76, 60, 0.4), 10, 0, 0, 3);
+}

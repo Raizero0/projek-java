@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" spacing="15" xmlns="http://javafx.com/javafx/21" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.javagear.controllers.KonfirmasiPembayaranController"
+      prefWidth="450" prefHeight="550"
+      style="-fx-background-color: white; -fx-padding: 25; -fx-border-color: #F39C12; -fx-border-width: 2;">
+    
+    <VBox alignment="CENTER" spacing="5">
+        <Label text="💰 KONFIRMASI PEMBAYARAN" textFill="#2c3e50">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Label>
+        <Label text="Pastikan uang tunai sudah diterima" textFill="#7f8c8d" style="-fx-font-size: 12;"/>
+        <Separator prefWidth="300"/>
+    </VBox>
+
+    <VBox spacing="10" style="-fx-background-color: #fdf2e9; -fx-padding: 15; -fx-border-color: #F39C12; -fx-border-radius: 5;">
+        <Label text="📋 DATA TRANSAKSI" textFill="#d35400" style="-fx-font-weight: bold;"/>
+        
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="ID Transaksi:" prefWidth="100" textFill="#2c3e50" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblIdPeminjaman" text="-" style="-fx-text-fill: #e67e22; -fx-font-weight: bold;"/>
+        </HBox>
+        
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="User:" prefWidth="100" textFill="#2c3e50" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblNamaUser" text="-" style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;"/>
+        </HBox>
+        
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Barang:" prefWidth="100" textFill="#2c3e50" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblNamaProduk" text="-" style="-fx-text-fill: #2c3e50;"/>
+        </HBox>
+        
+        <Separator style="-fx-opacity: 0.5;"/>
+        
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Total Tagihan:" prefWidth="100" textFill="#2c3e50" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblTotalBayar" text="-" style="-fx-text-fill: #e74c3c; -fx-font-weight: bold; -fx-font-size: 16;"/>
+        </HBox>
+        
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Metode:" prefWidth="100" textFill="#2c3e50" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblMetodeBayar" text="CASH (Bayar di Tempat)" style="-fx-text-fill: #2980b9; -fx-font-weight: bold;"/>
+        </HBox>
+
+        <HBox spacing="15" alignment="CENTER_LEFT">
+            <Label text="Status Awal:" prefWidth="100" textFill="#2c3e50" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblStatusSebelumnya" text="-" style="-fx-text-fill: #f39c12; -fx-font-weight: bold;"/>
+        </HBox>
+    </VBox>
+
+    <VBox spacing="5">
+        <Label text="Catatan Admin (Opsional):" textFill="#2c3e50" style="-fx-font-weight: bold;"/>
+        <TextArea fx:id="txtCatatanAdmin" prefRowCount="3" wrapText="true" 
+                  promptText="Contoh: Uang diterima lunas oleh admin..." 
+                  style="-fx-border-color: #bdc3c7; -fx-border-radius: 3;"/>
+    </VBox>
+
+    <VBox spacing="5" style="-fx-background-color: #e8f8f5; -fx-padding: 10; -fx-border-radius: 5;">
+        <Label text="ℹ️ AKSI KONFIRMASI:" textFill="#27ae60" style="-fx-font-weight: bold; -fx-font-size: 11;"/>
+        <Label text="• Status akan berubah menjadi LUNAS / SUDAH BAYAR" textFill="#16a085" style="-fx-font-size: 10;"/>
+        <Label text="• User akan menerima notifikasi konfirmasi" textFill="#16a085" style="-fx-font-size: 10;"/>
+    </VBox>
+
+    <HBox spacing="15" alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+        <Button text="❌ BATAL" onAction="#handleCancel" 
+                style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-pref-width: 120;"/>
+        <Button fx:id="btnConfirm" text="✅ TERIMA UANG" onAction="#handleConfirm" 
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-pref-width: 150;"/>
+    </HBox>
+
+</VBox>

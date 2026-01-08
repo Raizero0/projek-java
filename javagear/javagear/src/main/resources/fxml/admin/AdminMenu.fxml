@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?> <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.javagear.controllers.AdminMenuController"
+            stylesheets="@../../css/styleadmin.css"
+            prefWidth="1200" prefHeight="700">
+
+    <left>
+        <VBox styleClass="admin-sidebar" prefWidth="280" alignment="TOP_CENTER" spacing="20">
+            <padding><Insets top="40" bottom="40" left="20" right="20"/></padding>
+            
+            <ImageView fitHeight="40" fitWidth="100" preserveRatio="true" styleClass="logo-glow">
+                <image><Image url="@../../img/logo.png"/></image>
+            </ImageView>
+            
+            <VBox prefHeight="20"/>
+            
+            <Circle fx:id="circleFotoAdmin" radius="60" stroke="WHITE" strokeWidth="3" fill="DODGERBLUE"/>
+            
+            <VBox alignment="CENTER" spacing="5">
+                <Label fx:id="lblNamaAdmin" text="Admin Name" styleClass="admin-name"/>
+                <Label text="Administrator" styleClass="admin-role"/>
+            </VBox>
+            
+            <Separator opacity="0.3"/>
+            
+            <VBox VBox.vgrow="ALWAYS"/> <Button text="KELUAR / LOGOUT" onAction="#handleLogout" styleClass="btn-logout" maxWidth="Infinity" prefHeight="40"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="30" style="-fx-padding: 40;">
+            
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <VBox>
+                    <Label text="Dashboard Admin" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #1A5D34;"/>
+                    <Label text="Selamat bekerja! Pantau terus status rental hari ini." style="-fx-text-fill: #7f8c8d;"/>
+                </VBox>
+                
+                <HBox HBox.hgrow="ALWAYS"/>
+                
+                <VBox styleClass="msg-widget" prefWidth="250" 
+                      onMouseClicked="#handleBukaInbox" 
+                      style="-fx-cursor: hand;">
+                      
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="📩 Kotak Masuk" style="-fx-font-weight: bold;"/>
+                        <Label fx:id="lblPesanCount" text="Checking..." style="-fx-font-size: 11px;"/>
+                    </HBox>
+                    <Label fx:id="lblPesanPreview" text="-" style="-fx-text-fill: #7f8c8d; -fx-font-size: 11px; -fx-padding: 5 0 0 0;"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="40" alignment="CENTER" VBox.vgrow="ALWAYS">
+                
+                <VBox styleClass="menu-card" onMouseClicked="#handleMenuUser">
+                    <ImageView fitHeight="120" fitWidth="120" preserveRatio="true" styleClass="card-icon">
+                        <image><Image url="@../../img/icon_admin_monitor.png"/></image>
+                    </ImageView>
+                    
+                    <Region prefHeight="15"/>
+                    
+                    <Label text="Monitoring User" styleClass="card-title"/>
+                    <Label text="Cek status sewa, denda, konfirmasi pembayaran, dan kirim peringatan." styleClass="card-desc"/>
+                </VBox>
+
+                <VBox styleClass="menu-card" onMouseClicked="#handleMenuBarang">
+                    <ImageView fitHeight="120" fitWidth="120" preserveRatio="true" styleClass="card-icon">
+                        <image><Image url="@../../img/icon_kelola_barang.png"/></image>
+                    </ImageView>
+                    
+                    <Region prefHeight="15"/>
+                    
+                    <Label text="Kelola Barang" styleClass="card-title"/>
+                    <Label text="Cek stok, tambah barang baru, dan atur kategori produk." styleClass="card-desc"/>
+                </VBox>
+
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>

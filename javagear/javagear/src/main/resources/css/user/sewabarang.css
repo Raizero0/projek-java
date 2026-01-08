@@ -1,0 +1,181 @@
+/* sewabarang.css - Adventure Theme (Soft & Readable) */
+
+.root {
+    /* Background Image */
+    -fx-background-image: url('../../img/bg_sewa.jpg');
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+
+/* HEADER KATALOG */
+.header-bar {
+    /* 🔥 UPDATE: Hijau Mint Pucat (Fresh & Clean) */
+    -fx-background-color: #E8F5E9; 
+    
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2);
+    -fx-padding: 15 30;
+    -fx-background-radius: 0 0 20 20; 
+    -fx-border-color: #C8E6C9; /* Border ijo tipis banget */
+    -fx-border-width: 0 0 1 0;
+}
+
+.brand-text {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1B5E20; /* Ijo Hutan Gelap (Kontras sama background mint) */
+}
+
+/* GRID CONTAINER */
+.catalog-container {
+    /* 🔥 UPDATE: Kasih latar putih transparan di belakang grid barang */
+    -fx-background-color: rgba(255, 255, 255, 0.7); 
+    -fx-background-radius: 20;
+    
+    -fx-padding: 20;
+    -fx-alignment: TOP_CENTER;
+}
+
+.category-container {
+    -fx-spacing: 15;
+    -fx-padding: 10 5;
+    -fx-alignment: CENTER_LEFT;
+    -fx-background-color: transparent;
+}
+
+.scroll-pane, .scroll-pane .viewport {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+/* KARTU PRODUK */
+.product-card {
+    -fx-background-color: white; /* Putih Solid biar konten jelas */
+    -fx-background-radius: 15; 
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0, 0, 4); 
+    -fx-padding: 15;
+    -fx-alignment: center;
+    -fx-cursor: hand;
+    -fx-min-width: 220; 
+    -fx-min-height: 290;
+    -fx-max-width: 220;
+    -fx-border-color: white;
+    -fx-border-width: 2;
+    -fx-border-radius: 15;
+    -fx-transition: all 0.3s ease; 
+}
+
+.product-card:hover {
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-border-color: #4CAF50; /* Ijo Material Design */
+    -fx-effect: dropshadow(three-pass-box, rgba(76, 175, 80, 0.4), 15, 0, 0, 5);
+}
+
+.product-card-selected {
+    -fx-background-color: #F1F8E9; 
+    -fx-background-radius: 15;
+    -fx-border-color: #2E7D32;
+    -fx-border-width: 2;
+    -fx-border-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(46, 125, 50, 0.5), 10, 0, 0, 4);
+    
+    -fx-padding: 15;
+    -fx-alignment: center;
+    -fx-cursor: hand;
+    -fx-min-width: 220;
+    -fx-min-height: 290;
+    -fx-max-width: 220;
+}
+
+/* TEKS PRODUK */
+.product-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #37474F;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-padding: 5 0 0 0;
+}
+
+.product-price {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E65100;
+}
+
+.product-stock {
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #78909C;
+    -fx-background-color: #ECEFF1;
+    -fx-background-radius: 10;
+    -fx-padding: 3 8;
+}
+
+/* KATEGORI CHIPS */
+.btn-category {
+    -fx-background-color: white;
+    -fx-text-fill: #455A64;
+    -fx-background-radius: 20;
+    -fx-border-color: #CFD8DC;
+    -fx-border-radius: 20;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-padding: 6 15;
+    -fx-font-size: 11px;
+}
+
+.btn-category:hover {
+    -fx-background-color: #E8F5E9; /* Hover jadi Ijo Mint Pucat */
+    -fx-border-color: #A5D6A7;
+    -fx-text-fill: #2E7D32;
+}
+
+.btn-category-selected {
+    -fx-background-color: #2E7D32; /* Ijo Tua Solid */
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #2E7D32;
+    -fx-font-weight: bold;
+    -fx-padding: 6 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(46, 125, 50, 0.4), 5, 0, 0, 2);
+}
+
+/* CHECKOUT BAR (FOOTER) */
+.checkout-bar {
+    -fx-background-color: #E8F5E9; 
+    
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 15, 0, 0, -5);
+    -fx-padding: 15 40;
+    -fx-background-radius: 20 20 0 0;
+    -fx-border-color: #C8E6C9;
+    -fx-border-width: 1 0 0 0;
+}
+
+.btn-checkout-disabled {
+    -fx-background-color: #B0BEC5;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 25;
+    -fx-cursor: default;
+}
+
+.btn-checkout-active {
+    -fx-background-color: #2E7D32;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 25;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(46, 125, 50, 0.5), 8, 0, 0, 3);
+    -fx-font-size: 14px;
+}
+.btn-checkout-active:hover { 
+    -fx-background-color: #1B5E20; 
+    -fx-scale-x: 1.02; 
+    -fx-scale-y: 1.02;
+}

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.javagear.controllers.AdminUserViewController"
+            stylesheets="@../../css/styleadmin.css"
+            prefWidth="1200" prefHeight="700">
+
+    <left>
+        <VBox styleClass="admin-sidebar" prefWidth="260" alignment="TOP_CENTER" spacing="20">
+            <padding><Insets top="40" bottom="40" left="20" right="20"/></padding>
+            
+            <ImageView fitHeight="40" fitWidth="100" preserveRatio="true" styleClass="logo-glow">
+                <image><Image url="@../../img/logo.png"/></image>
+            </ImageView>
+            
+            <VBox prefHeight="20"/>
+            <Circle fx:id="circleFotoAdmin" radius="50" stroke="WHITE" strokeWidth="2" fill="DODGERBLUE"/>
+            
+            <VBox alignment="CENTER" spacing="5">
+                <Label fx:id="lblNamaAdmin" text="Admin" styleClass="admin-name" style="-fx-font-size: 16px;"/>
+                <Label text="User Manager" styleClass="admin-role"/>
+            </VBox>
+            
+            <Separator opacity="0.3"/>
+
+            <VBox alignment="CENTER" spacing="5" style="-fx-padding: 10; -fx-background-color: rgba(0,0,0,0.2); -fx-background-radius: 10;">
+                
+                <Label text="💰 SALDO APLIKASI" style="-fx-text-fill: #bdc3c7; -fx-font-size: 10px; -fx-font-weight: bold;"/>
+                <Label fx:id="lblPendapatan" text="Rp 0" style="-fx-text-fill: #2ecc71; -fx-font-weight: bold; -fx-font-size: 18px;"/>
+                <Label text="(Nett: Transfer - Bonus)" style="-fx-text-fill: #7f8c8d; -fx-font-size: 9px;"/>
+                
+                <Separator opacity="0.3" style="-fx-padding: 5 0 5 0;"/>
+
+                <Label text="📦 KAS TUNAI (COD)" style="-fx-text-fill: #bdc3c7; -fx-font-size: 10px; -fx-font-weight: bold;"/>
+                <Label fx:id="lblPendapatanCOD" text="Rp 0" style="-fx-text-fill: #f39c12; -fx-font-weight: bold; -fx-font-size: 18px;"/>
+                <Label text="(Uang Fisik di Admin)" style="-fx-text-fill: #7f8c8d; -fx-font-size: 9px;"/>
+                
+            </VBox>
+            
+            <Separator opacity="0.3"/>
+            
+            <Button text="← KEMBALI KE MENU" onAction="#handleBackToMenu" 
+                    style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 20; -fx-cursor: hand;" 
+                    maxWidth="Infinity"/>
+        </VBox>
+    </left>
+
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE" style="-fx-background-color: #F4F6F8;">
+            
+            <Tab text="👥 KELOLA MEMBER">
+                <VBox spacing="20" style="-fx-padding: 30;">
+                    <HBox alignment="CENTER_LEFT" spacing="15">
+                        <Label text="DATA MEMBER &amp; LEVEL" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="🔄 REFRESH DATA" onAction="#handleRefresh" styleClass="btn-action" style="-fx-background-color: #3498db;"/>
+                    </HBox>
+
+                    <HBox styleClass="filter-container" spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Total Member:" style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;"/>
+                        <Label fx:id="lblTotalUser" text="0" style="-fx-font-weight: bold; -fx-text-fill: #2C3E50; -fx-font-size: 14px;"/>
+                    </HBox>
+
+                    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent; -fx-background: transparent;">
+                        <content>
+                            <FlowPane fx:id="gridUser" hgap="20" vgap="20" style="-fx-padding: 10;" prefWrapLength="1000"/>
+                        </content>
+                    </ScrollPane>
+                </VBox>
+            </Tab>
+
+            <Tab text="📊 MONITORING TRANSAKSI">
+                <VBox spacing="20" style="-fx-padding: 30;">
+                    <HBox alignment="CENTER_LEFT" spacing="15">
+                        <Label text="DAFTAR PEMINJAMAN" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;"/>
+                    </HBox>
+
+                    <VBox spacing="15" styleClass="filter-container">
+                        
+                        <HBox spacing="15" alignment="CENTER_LEFT">
+                            <Label text="📅 Periode:" style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;"/>
+                            
+                            <ComboBox fx:id="comboBulan" promptText="Pilih Bulan" prefWidth="130" 
+                                      style="-fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 5;"/>
+                            
+                            <ComboBox fx:id="comboTahun" promptText="Pilih Tahun" prefWidth="100" 
+                                      style="-fx-background-color: white; -fx-border-color: #bdc3c7; -fx-border-radius: 5;"/>
+                            
+                            <Button text="🔄 RESET DEFAULT" onAction="#handleResetFilter" 
+                                    style="-fx-background-color: white; -fx-border-color: #95a5a6; -fx-text-fill: #7f8c8d; -fx-border-radius: 5; -fx-cursor: hand; -fx-font-size: 10px; -fx-font-weight: bold;"/>
+
+                            <Button fx:id="btnCetakLaporan" text="📥 CETAK LAPORAN" onAction="#handleCetakLaporan" 
+                                    disable="true"
+                                    style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-border-radius: 5; -fx-cursor: hand; -fx-font-size: 10px; -fx-font-weight: bold;"/>
+                        </HBox>
+
+                        <HBox spacing="20" alignment="CENTER_LEFT">
+                            <Label text="🏷️ Status:" style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;"/>
+                            
+                            <Button fx:id="btnFilterSemua" text="SEMUA" onAction="#filterSemua" 
+                                    styleClass="btn-filter-base, btn-ungu-solid"/>
+
+                            <Button fx:id="btnFilterMenunggu" text="MENUNGGU" onAction="#filterMenunggu" 
+                                    styleClass="btn-filter-base, btn-kuning-transparan"/>
+
+                            <Button fx:id="btnFilterLunas" text="LUNAS" onAction="#filterLunas" 
+                                    styleClass="btn-filter-base, btn-hijau-transparan"/>
+                            
+                            <Button fx:id="btnFilterDendaLunas" text="LUNAS DENDA" onAction="#filterDendaLunas" 
+                                    styleClass="btn-filter-base, btn-biru-transparan"/>
+
+                            <Button fx:id="btnFilterTelat" text="TELAT" onAction="#filterTelat" 
+                                    styleClass="btn-filter-base, btn-merah-transparan"/>
+                        </HBox>
+                    </VBox>
+
+                    <TableView fx:id="tabelPeminjaman" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                            <TableColumn fx:id="colUser" text="Peminjam" prefWidth="130"/>
+                            <TableColumn fx:id="colBarang" text="Barang" prefWidth="200"/>
+                            <TableColumn fx:id="colTanggal" text="Tgl Pinjam" prefWidth="90"/>
+                            <TableColumn fx:id="colKembali" text="Tgl Kembali" prefWidth="90"/>
+                            <TableColumn fx:id="colBiayaSewa" text="Biaya Sewa" prefWidth="120"/>
+                            <TableColumn fx:id="colDenda" text="Denda" prefWidth="100"/>
+                            <TableColumn fx:id="colStatus" text="Status Brg" prefWidth="110"/>
+                            <TableColumn fx:id="colStatusBayar" text="Status Bayar" prefWidth="230"/>
+                        </columns>
+                    </TableView>
+
+                    <HBox spacing="15" alignment="CENTER_RIGHT" styleClass="checkout-bar">
+                        <Label text="Aksi:" style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;"/>
+
+                        <Button fx:id="btnTerima" text="📦 TERIMA BARANG" onAction="#handleTerimaBarang" 
+                        styleClass="btn-action" style="-fx-background-color: #27ae60;" disable="true"/>
+
+                        <Button fx:id="btnKonfirmasi" text="💰 KONFIRMASI BAYAR" onAction="#handleKonfirmasi" 
+                        styleClass="btn-action" style="-fx-background-color: #F39C12;" disable="true"/>
+
+                        <Button fx:id="btnPeringatan" text="📢 PERINGATAN" onAction="#handlePeringatan" 
+                        styleClass="btn-danger" disable="true"/>
+                        
+                        <Button fx:id="btnArsipChat" text="🗃️ ARSIP CHAT" onAction="#handleArsipChat" 
+                        styleClass="btn-filter" style="-fx-background-color: #3498db; -fx-text-fill: white;" disable="true"/>
+
+                        <Button fx:id="btnEditTanggal" text="📅 EDIT TANGGAL" onAction="#handleEditTanggal" 
+                        styleClass="btn-action" style="-fx-background-color: #2C3E50;" disable="true"/>
+                    </HBox>
+                </VBox>
+            </Tab>
+
+        </TabPane>
+    </center>
+
+</BorderPane>
