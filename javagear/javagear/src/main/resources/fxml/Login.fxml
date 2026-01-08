@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?> <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="com.javagear.controllers.LoginController"
+           stylesheets="@../css/stylelogin.css">
+
+    <Region styleClass="login-background" />
+    <Region styleClass="overlay-dim" />
+
+    <VBox alignment="CENTER">
+        <VBox styleClass="card-pane" alignment="CENTER" spacing="15.0" maxWidth="400">
+            
+            <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../img/logo.png" />
+                </image>
+                <VBox.margin>
+                    <Insets bottom="5.0" />
+                </VBox.margin>
+            </ImageView>
+            
+            <VBox alignment="CENTER" spacing="2">
+                <Label text="Selamat Datang!" styleClass="label-header"/>
+                <Label text="Login untuk memulai petualangan" styleClass="label-subheader"/>
+            </VBox>
+            
+            <VBox prefHeight="15"/> 
+            
+            <VBox spacing="12">
+                <VBox spacing="5">
+                    <Label text="Username" styleClass="label-normal" style="-fx-font-weight: bold;"/>
+                    <TextField fx:id="usernameField" promptText="Masukkan username" style="-fx-pref-height: 40;"/>
+                </VBox>
+                
+                <VBox spacing="5">
+                    <Label text="Password" styleClass="label-normal" style="-fx-font-weight: bold;"/>
+                    
+                    <StackPane style="-fx-pref-height: 40;" minHeight="40" maxHeight="40">
+                    <TextField fx:id="passwordTextField" promptText="••••••••" 
+                        style="-fx-pref-height: 40;" 
+                        minHeight="40" maxHeight="40"
+                        visible="false"/> 
+
+                        <PasswordField fx:id="passwordField" promptText="••••••••" 
+                        style="-fx-pref-height: 40;"
+                        minHeight="40" maxHeight="40"/>
+                </StackPane>
+                    
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <CheckBox fx:id="cbShowPassword" text="Tampilkan Password" 
+                                  style="-fx-font-size: 11px; -fx-text-fill: #546E7A; -fx-cursor: hand;"/>
+                        
+                        <Region HBox.hgrow="ALWAYS"/>
+                        
+                        <Button text="Lupa Password?" onAction="#goToLupaPassword" 
+                                styleClass="button-link" style="-fx-font-size: 11px;"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+            <Button text="MASUK SEKARANG" onAction="#handleLogin" 
+                    styleClass="button-primary" maxWidth="Infinity" prefHeight="45"
+                    style="-fx-font-size: 14px;"/>
+            
+            <VBox prefHeight="5"/> 
+            
+            <HBox alignment="CENTER" spacing="5">
+                <Label text="Belum punya akun?" styleClass="label-subheader" style="-fx-font-size: 12px;"/>
+                <Button text="Daftar disini" onAction="#goToRegister" styleClass="button-link" style="-fx-font-weight: bold;"/>
+            </HBox>
+            
+            <VBox alignment="CENTER" style="-fx-padding: 15 0 0 0;">
+                <Button text="Keluar Aplikasi" onAction="#handleExit" styleClass="button-danger"/>
+            </VBox>
+
+        </VBox>
+        
+        <Label text="© 2025 JavaGear Outdoor System" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 11px;">
+            <VBox.margin>
+                <Insets top="20"/>
+            </VBox.margin>
+        </Label>
+    </VBox>
+
+</StackPane>

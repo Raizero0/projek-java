@@ -1,0 +1,236 @@
+/* styleuser.css - Dashboard User "Nature Vibe" */
+
+.root {
+    -fx-background-color: transparent;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+.dashboard-bg {
+    -fx-background-image: url('../../img/bg_dashboard.jpg');
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}
+
+/* LAYER 2: LAPISAN GELAP (Overlay) */
+.dashboard-overlay {
+    /* Ubah angka 0.4 ini buat atur kegelapan (0.1 tipis, 0.9 gelap banget) */
+    -fx-background-color: rgba(0, 0, 0, 0.6); 
+}
+/* LAYER 1: GAMBAR GUNUNG */
+
+/* HEADER BAR (Semi-Transparent White) */
+.header-bar {
+    -fx-background-color: rgba(255, 255, 255, 0.95); /* Putih agak transparan */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 2);
+    -fx-padding: 15 30;
+    -fx-background-radius: 0 0 15 15; /* Sudut bawah melengkung dikit */
+}
+
+.brand-text {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A5D34;
+}
+
+.user-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+}
+
+/* SALDO BADGE */
+.saldo-badge {
+    -fx-background-color: #E8F5E9;
+    -fx-background-radius: 20;
+    -fx-padding: 5 15;
+    -fx-border-color: #4CAF50;
+    -fx-border-radius: 20;
+}
+
+.saldo-text {
+    -fx-font-weight: bold;
+    -fx-text-fill: #2E7D32;
+}
+
+/* TOMBOL KECIL */
+.btn-topup-small {
+    -fx-background-color: #FF9800;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+    -fx-background-radius: 15;
+    -fx-cursor: hand;
+}
+.btn-topup-small:hover { 
+    -fx-background-color: #F57C00; 
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+.btn-logout {
+    -fx-background-color: white;
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+    -fx-border-color: #e74c3c;
+    -fx-border-radius: 5;
+    -fx-cursor: hand;
+}
+.btn-logout:hover { 
+    -fx-background-color: #e74c3c; 
+    -fx-text-fill: white; 
+}
+
+/* KARTU MENU (GLASSMORPHISM EFFECT) */
+/* KARTU MENU (GLASS + GREEN GLOW) */
+.menu-card {
+    /* Balik ke Semi-Transparan (Kaca) 85% */
+    -fx-background-color: rgba(255, 255, 255, 0.683); 
+    
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    
+    /* Shadow lembut warna hitam (biar ngangkat dari background) */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 15, 0, 0, 5);
+    
+    -fx-cursor: hand;
+    -fx-alignment: center;
+    -fx-padding: 30;
+    -fx-min-width: 300;
+    -fx-min-height: 350;
+    
+    /* Border awal putih transparan (biar rapi) */
+    -fx-border-color: rgba(255, 255, 255, 0.8);
+    -fx-border-width: 2;
+}
+
+.menu-card:hover {
+    /* Pas Mouse Nempel: Jadi Lebih Putih (Jelas) */
+    -fx-background-color: rgba(255, 255, 255, 0.95); 
+    
+    /* Efek Zoom Dikit */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-border-color: #3ee90069;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 255, 55, 0.4), 30, 0, 0, 0);
+}
+
+.card-title {
+    -fx-font-size: 24px; /* Gedein dikit biar kebaca */
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A5D34; /* Hijau Alam */
+}
+
+.card-desc {
+    -fx-font-size: 14px;
+    -fx-text-fill: #546E7A;
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+}
+
+.journey-card {
+    /* Putih Transparan (80%) biar background gunung tembus */
+    -fx-background-color: rgba(255, 255, 255, 0.8); 
+    
+    -fx-background-radius: 15;
+    
+    /* Padding lebih kecil biar gak gembung */
+    -fx-padding: 10 20; 
+    
+    -fx-cursor: hand;
+
+    /* Shadow lebih tipis biar gak berat */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 3);
+    
+    -fx-border-color: rgba(0, 255, 55, 0.4);
+    -fx-border-radius: 15;
+    -fx-border-width: 1;
+}
+
+.journey-card:hover {
+    /* 1. Zoom In Dikit (Biar kerasa 'pop up') */
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    
+    /* 2. Background jadi lebih solid/putih (Biar teks makin jelas) */
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    
+    -fx-border-color: #3ee90069;
+    
+    -fx-effect: dropshadow(three-pass-box, rgb(4, 255, 0), 30, 0, 0, 0);
+}
+
+/* JUDUL SECTION */
+.section-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #145cd0;
+    -fx-padding: 0 0 10 0;
+}
+
+/* PROGRESS BAR CUSTOM (Emas Mewah) */
+.progress-bar-journey .track {
+    -fx-background-color: #ecf0f1; /* Abu-abu muda (Jalur Kosong) */
+    -fx-background-radius: 10;
+}
+
+.progress-bar-journey .bar {
+    -fx-background-color: linear-gradient(to right, #f1c40f, #f39c12); /* Gradasi Emas */
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(241, 196, 15, 0.6), 10, 0, 0, 0); /* Glow Emas */
+}
+
+/* LABEL STATUS LEVEL */
+.text-locked {
+    -fx-text-fill: #bdc3c7; /* Abu-abu (Belum Kebuka) */
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.text-unlocked {
+    -fx-text-fill: #27ae60; /* Hijau (Sudah Kebuka) */
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.text-current {
+    -fx-text-fill: #d35400; /* Oranye (Level Saat Ini) */
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(one-pass-box, rgba(211, 84, 0, 0.3), 5, 0, 0, 1);
+}
+
+/* TOOLTIP BENEFIT (Keterangan Diskon) */
+.benefit-badge {
+    -fx-background-color: #f0f0f0;
+    -fx-background-radius: 5;
+    -fx-padding: 2 8;
+    -fx-font-size: 10px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.benefit-badge-active {
+    -fx-background-color: #fff9c4; /* Kuning Pucat */
+    -fx-background-radius: 5;
+    -fx-padding: 2 8;
+    -fx-font-size: 10px;
+    -fx-text-fill: #f39c12;
+    -fx-font-weight: bold;
+    -fx-border-color: #f39c12;
+    -fx-border-radius: 5;
+}
+
+.badge-card {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+    -fx-padding: 5;
+    -fx-cursor: hand; /* Kursor jadi tangan */
+}
+
+.badge-card:hover {
+    /* Efek Zoom (Membesar 15%) */
+    -fx-scale-x: 1.15;
+    -fx-scale-y: 1.15;
+    
+    /* Efek Glow Emas di belakangnya */
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 215, 0, 0.6), 15, 0, 0, 0);
+}

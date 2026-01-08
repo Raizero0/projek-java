@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="boxStruk" alignment="TOP_CENTER" spacing="10" xmlns="http://javafx.com/javafx/21" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.javagear.controllers.StrukDendaController"
+      prefWidth="380" 
+      style="-fx-background-color: white; -fx-padding: 20; -fx-border-color: #e74c3c; -fx-border-width: 2;">
+    
+    <VBox alignment="CENTER" spacing="2">
+        <Label text="JAVA GEAR OUTDOOR" style="-fx-font-weight: bold; -fx-font-size: 16; -fx-text-fill: #2c3e50;"/>
+        <Label text="STRUK PEMBAYARAN DENDA" style="-fx-font-size: 11; -fx-text-fill: #e74c3c; -fx-font-weight: bold;"/>
+        <Separator prefWidth="200" style="-fx-padding: 5 0;"/>
+    </VBox>
+
+    <VBox spacing="5" style="-fx-padding: 8; -fx-background-color: #fdf2f2; -fx-border-color: #e74c3c; -fx-border-radius: 3;">
+        <HBox spacing="10">
+            <Label text="ID Struk:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 10;" prefWidth="80"/>
+            <Label fx:id="lblIdStruk" text="-" style="-fx-text-fill: #e67e22; -fx-font-weight: bold; -fx-font-size: 10;"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Tanggal:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 10;" prefWidth="80"/>
+            <Label fx:id="lblTanggal" text="-" style="-fx-text-fill: #2c3e50; -fx-font-size: 10;"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="ID Bayar:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 10;" prefWidth="80"/>
+            <Label fx:id="lblIdPembayaran" text="-" style="-fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-font-size: 10;"/>
+        </HBox>
+    </VBox>
+
+    <VBox spacing="5">
+        <Label text="RINCIAN DENDA" style="-fx-font-weight: bold; -fx-text-fill: #e74c3c; -fx-font-size: 11;"/>
+        
+        <HBox spacing="10">
+            <Label text="Total Denda:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 11;" prefWidth="100"/>
+            <Label fx:id="lblTotalDenda" text="-" style="-fx-text-fill: #e74c3c; -fx-font-weight: bold; -fx-font-size: 11;"/>
+        </HBox>
+        
+        <HBox spacing="10">
+            <Label text="Sudah Dibayar:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 11;" prefWidth="100"/>
+            <Label fx:id="lblSudahDibayar" text="-" style="-fx-text-fill: #27ae60; -fx-font-weight: bold; -fx-font-size: 11;"/>
+        </HBox>
+        
+        <HBox spacing="10">
+            <Label text="Sisa Denda:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 11;" prefWidth="100"/>
+            <Label fx:id="lblSisaDenda" text="-" style="-fx-text-fill: #f39c12; -fx-font-weight: bold; -fx-font-size: 11;"/>
+        </HBox>
+    </VBox>
+
+    <Separator prefWidth="300"/>
+
+    <VBox spacing="5">
+        <Label text="DETAIL PEMBAYARAN" style="-fx-font-weight: bold; -fx-text-fill: #e74c3c; -fx-font-size: 11;"/>
+        
+        <HBox spacing="10">
+            <Label text="Nominal Bayar:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 11;" prefWidth="100"/>
+            <Label fx:id="lblNominalBayar" text="-" style="-fx-text-fill: #27ae60; -fx-font-weight: bold; -fx-font-size: 12;"/>
+        </HBox>
+        
+        <HBox spacing="10">
+            <Label text="Metode Bayar:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 11;" prefWidth="100"/>
+            <Label fx:id="lblMetodeBayar" text="-" style="-fx-text-fill: #2c3e50; -fx-font-size: 11;"/>
+        </HBox>
+        
+        <HBox spacing="10">
+            <Label text="Kembalian:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 11;" prefWidth="100"/>
+            <Label fx:id="lblKembalian" text="-" style="-fx-text-fill: #27ae60; -fx-font-weight: bold; -fx-font-size: 11;"/>
+        </HBox>
+        
+        <HBox spacing="10">
+            <Label text="Status:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 11;" prefWidth="100"/>
+            <Label fx:id="lblStatusPembayaran" text="-" style="-fx-font-weight: bold; -fx-font-size: 11;"/>
+        </HBox>
+    </VBox>
+
+    <VBox spacing="2" style="-fx-padding: 8; -fx-background-color: #fff9e6; -fx-border-color: #f39c12; -fx-border-radius: 3;">
+        <Label text="📝 CATATAN:" style="-fx-font-weight: bold; -fx-text-fill: #e67e22; -fx-font-size: 10;"/>
+        <Label text="• Denda keterlambatan: Rp 15.000/hari" style="-fx-text-fill: #8e6c0e; -fx-font-size: 9;"/>
+        <Label text="• Simpan struk ini sebagai bukti sah" style="-fx-text-fill: #8e6c0e; -fx-font-size: 9;"/>
+    </VBox>
+
+    <VBox alignment="CENTER" spacing="2">
+        <Label text="Terima kasih telah melunasi denda!" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-font-size: 10;"/>
+        <Label text="www.javagear-outdoor.com" style="-fx-text-fill: #3498db; -fx-font-size: 9;"/>
+        <Label text="📞 0812-3456-7890" style="-fx-text-fill: #7f8c8d; -fx-font-size: 9;"/>
+    </VBox>
+
+    <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+        <Button fx:id="btnPrint" text="🖨️ CETAK" onAction="#handlePrint" 
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-pref-width: 80; -fx-font-size: 10;"/>
+        <Button text="💾 SIMPAN" onAction="#handleSaveAsText" 
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-pref-width: 80; -fx-font-size: 10;"/>
+        <Button fx:id="btnClose" text="❌ TUTUP" onAction="#handleClose" 
+                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-pref-width: 80; -fx-font-size: 10;"/>
+    </HBox>
+</VBox>

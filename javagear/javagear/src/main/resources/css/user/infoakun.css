@@ -1,0 +1,80 @@
+/* infoakun.css - Khusus Profil & Riwayat */
+
+.root {
+    -fx-background-color: #F5F7FA;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+/* KARTU PUTIH */
+.card-box {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 10, 0, 0, 2);
+    -fx-padding: 20;
+}
+
+/* TEKS BESAR */
+.text-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2C3E50;
+}
+
+.text-saldo-big {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27ae60;
+}
+
+/* TOMBOL UTAMA */
+.btn-primary {
+    -fx-background-color: #1A5D34;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #2C5F2D;
+}
+
+.btn-secondary {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+}
+
+.btn-danger-alert {
+    -fx-background-color: #C62828;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+}
+
+/* TABEL RIWAYAT */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #ecf0f1;
+    -fx-border-width: 1;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f1f2f6;
+    -fx-background-radius: 5 5 0 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #2C3E50;
+    -fx-font-weight: bold;
+}
+
+/* Baris Tabel */
+.table-row-cell {
+    -fx-background-insets: 0;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #ecf0f1;
+}

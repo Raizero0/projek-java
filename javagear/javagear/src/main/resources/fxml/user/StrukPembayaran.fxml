@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox fx:id="boxStruk" alignment="TOP_CENTER" spacing="15" xmlns="http://javafx.com/javafx/21" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.javagear.controllers.StrukController"
+      prefWidth="400" prefHeight="600"
+      style="-fx-background-color: white; -fx-padding: 20; -fx-border-color: #2c3e50; -fx-border-width: 2;">
+    
+    <!-- HEADER STRUK -->
+    <VBox alignment="CENTER" spacing="5">
+        <Label text="JAVA GEAR OUTDOOR" style="-fx-font-weight: bold; -fx-font-size: 18; -fx-text-fill: #2c3e50;"/>
+        <Label text="RENTAL PERALATAN OUTDOOR" style="-fx-font-size: 12; -fx-text-fill: #7f8c8d;"/>
+        <Separator prefWidth="300"/>
+    </VBox>
+
+    <!-- INFO STRUK -->
+    <VBox spacing="8" style="-fx-padding: 10; -fx-background-color: #f8f9fa; -fx-border-color: #bdc3c7;">
+        <HBox spacing="10">
+            <Label text="ID Struk:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" prefWidth="100"/>
+            <Label fx:id="lblIdStruk" text="-" style="-fx-text-fill: #e67e22; -fx-font-weight: bold;"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Tanggal:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" prefWidth="100"/>
+            <Label fx:id="lblTanggal" text="-" style="-fx-text-fill: #2c3e50;"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="ID Pembayaran:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" prefWidth="100"/>
+            <Label fx:id="lblIdPembayaran" text="-" style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;"/>
+        </HBox>
+    </VBox>
+
+    <!-- DETAIL TRANSAKSI -->
+    <VBox spacing="10">
+        <Label text="DETAIL TRANSAKSI" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-underline: true;"/>
+        
+        <HBox spacing="10">
+            <Label text="Nama Customer:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" prefWidth="120"/>
+            <Label fx:id="lblNamaUser" text="-" style="-fx-text-fill: #2c3e50;"/>
+        </HBox>
+        
+        <HBox spacing="10">
+            <Label text="Produk:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" prefWidth="120"/>
+            <Label fx:id="lblNamaProduk" text="-" style="-fx-text-fill: #2c3e50;"/>
+        </HBox>
+        
+        <HBox spacing="10">
+            <Label text="Jumlah Barang:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" prefWidth="120"/>
+            <Label fx:id="lblJumlahBarang" text="-" style="-fx-text-fill: #2c3e50;"/>
+        </HBox>
+        
+        <HBox spacing="10">
+            <Label text="Durasi Sewa:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" prefWidth="120"/>
+            <Label fx:id="lblDurasi" text="-" style="-fx-text-fill: #2c3e50;"/>
+        </HBox>
+        
+        <HBox spacing="10">
+            <Label text="Harga per Hari:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" prefWidth="120"/>
+            <Label fx:id="lblHargaPerHari" text="-" style="-fx-text-fill: #e74c3c; -fx-font-weight: bold;"/>
+        </HBox>
+    </VBox>
+
+    <Separator prefWidth="350"/>
+
+    <!-- PEMBAYARAN -->
+    <VBox spacing="8">
+        <Label text="RINCIAN PEMBAYARAN" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-underline: true;"/>
+        
+        <HBox spacing="10">
+            <Label text="Total Bayar:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" prefWidth="120"/>
+            <Label fx:id="lblTotalBayar" text="-" style="-fx-text-fill: #e74c3c; -fx-font-weight: bold; -fx-font-size: 14;"/>
+        </HBox>
+        
+        <HBox spacing="10">
+            <Label text="Metode Bayar:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" prefWidth="120"/>
+            <Label fx:id="lblMetodeBayar" text="-" style="-fx-text-fill: #2c3e50;"/>
+        </HBox>
+        
+        <HBox spacing="10">
+            <Label text="Nominal Bayar:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" prefWidth="120"/>
+            <Label fx:id="lblNominalBayar" text="-" style="-fx-text-fill: #27ae60; -fx-font-weight: bold;"/>
+        </HBox>
+        
+        <HBox spacing="10">
+            <Label text="Kembalian:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" prefWidth="120"/>
+            <Label fx:id="lblKembalian" text="-" style="-fx-text-fill: #27ae60; -fx-font-weight: bold;"/>
+        </HBox>
+        
+        <HBox spacing="10">
+            <Label text="Status:" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;" prefWidth="120"/>
+            <Label fx:id="lblStatusPembayaran" text="-" style="-fx-font-weight: bold; -fx-font-size: 12;"/>
+        </HBox>
+    </VBox>
+
+    <Separator prefWidth="350"/>
+
+    <!-- FOOTER -->
+    <VBox alignment="CENTER" spacing="5">
+        <Label text="Terima kasih atas kepercayaan Anda!" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <Label text="www.javagear-outdoor.com" style="-fx-text-fill: #3498db; -fx-font-size: 11;"/>
+        <Label text="📞 0812-3456-7890" style="-fx-text-fill: #7f8c8d; -fx-font-size: 11;"/>
+    </VBox>
+
+    <!-- TOMBOL AKSI -->
+    <HBox spacing="15" alignment="CENTER" style="-fx-padding: 15 0 0 0;">
+        
+        <Button fx:id="btnPrint" text="🖨️ CETAK" onAction="#handlePrint" 
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-pref-width: 100;"/>
+        
+        <Button text="💾 SIMPAN TEXT" onAction="#handleSaveAsText" 
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-pref-width: 120;"/>
+        
+        <Button fx:id="btnClose" text="❌ TUTUP" onAction="#handleClose" 
+                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-pref-width: 100;"/>
+    </HBox>
+</VBox>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15" style="-fx-background-color: white; -fx-padding: 25; -fx-border-color: #1A5D34; -fx-border-width: 2;" 
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.javagear.controllers.CheckoutController">
+
+    <VBox alignment="CENTER" spacing="5">
+        <Label text="KONFIRMASI PESANAN" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #1A5D34;"/>
+        <Label text="Periksa kembali barang belanjaan Anda" style="-fx-text-fill: #7f8c8d;"/>
+        <Separator prefWidth="200"/>
+    </VBox>
+
+    <Label text="Barang yang dipilih:" style="-fx-font-weight: bold;"/>
+    <ListView fx:id="listBarang" prefHeight="150" style="-fx-background-color: #F5F7FA; -fx-border-color: #bdc3c7;"/>
+
+    <VBox spacing="10" style="-fx-background-color: #F5F7FA; -fx-padding: 15; -fx-background-radius: 5;">
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Tanggal Mulai:" prefWidth="100" style="-fx-font-weight: bold;"/>
+            <DatePicker fx:id="datePinjam" prefWidth="200"/>
+        </HBox>
+        
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Durasi Sewa:" prefWidth="100" style="-fx-font-weight: bold;"/>
+            <Spinner fx:id="spinnerDurasi" prefWidth="80"/>
+            <Label text="Hari"/>
+        </HBox>
+    </VBox>
+
+    <VBox spacing="10">
+        <Label text="Metode Pembayaran:" style="-fx-font-weight: bold;"/>
+        <ComboBox fx:id="comboMetode" prefWidth="350" promptText="Pilih Cara Bayar"/>
+        
+        <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+            <Label text="TOTAL TAGIHAN:" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #7f8c8d;"/>
+            <Label fx:id="lblTotalBayar" text="Rp 0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #E65100;"/>
+        </HBox>
+    </VBox>
+
+    <HBox spacing="15" alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+        <Button text="BATAL" onAction="#handleBatal" 
+                style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-pref-width: 100;"/>
+        
+        <Button text="✅ BAYAR SEKARANG" onAction="#handleBayar" 
+                style="-fx-background-color: #1A5D34; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-pref-width: 200;"/>
+    </HBox>
+
+</VBox>
